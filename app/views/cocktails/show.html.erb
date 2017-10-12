@@ -1,0 +1,25 @@
+<h1 class="text-center"><%= @cocktail.name %></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <p>Cocktail name: <%= @cocktail.name %></p>
+
+      <h3>doses description</h3>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= dose.description %></li>
+        <% end %>
+
+      </ul>
+
+      <h3>Create a review</h3>
+      <%= simple_form_for([@cocktail, @dose]) do |f| %>
+        <%= f.input :description %>
+        <%= f.submit %>
+      <% end %>
+
+      <%= link_to "Back to cocktails", cocktail_path %>
+    </div>
+  </div>
+</div>
