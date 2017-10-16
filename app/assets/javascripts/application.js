@@ -13,6 +13,6 @@
 ///= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require plugi
+//= require plugin
 //= require_tree .
 

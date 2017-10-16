@@ -1,10 +1,18 @@
 class DosesController < ApplicationController
 
-before_action :set_restaurant, only: [:new, :create]
+before_action :set_cocktail, only: [:new, :create]
+
+  def index
+    @doses = Dose.all
+  end
+
+  def new
+    @dose = Dose.new
+  end
 
   def create
-  @dose = Dose.new(dose_params)
-    @dose.cocktail = @cocktail
+    @dose = Dose.new(doses_params)
+    @dose.cocktail = @cocktails
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else

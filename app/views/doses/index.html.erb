@@ -1,0 +1,11 @@
+<h1 class="text-center">All the doses</h1>
+
+<div class="container">
+  <div class="row">
+    <% @doses.each do |dose| %>
+      <div class="col-xs-12 col-sm-4">
+        <h2><%= link_to dose.description, cocktail_dose_path(dose) %></h2>
+      </div>
+    <% end %>
+  </div>
+</div>
